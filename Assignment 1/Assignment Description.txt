@@ -1,0 +1,77 @@
+Assignment
+ 
+
+"Your assignment is to perform an analysis on a dataset of tweets provided in the course. The analysis should contain topic modelling and sentiment analysis. Use different splits of the data you have to perform your analysis, compare, correlate and visualize.Ó
+
+ 
+
+The main purpose of this team assignment is for us to see you are able to understand and use the material from the first few lectures and practicals. The tweets data is available in the files section in Canvas.
+ 
+
+Some ideas for research questions to think about could be:
+ 
+
+1. Were you able to load and parse the twitter data into a useful format for comparison with other data (e.g. state locations, demographics)? Were you able to show that you could do this clearly/visually?
+2. Are you able to get insights into the data before using sentiment or topic analysis? If yes, what could you show? If not, why not? 
+3. Did sentiment analyses help identify supporters of each candidate? How did sentiment correlate with other information like demographics? That is to say - where is each candidate popular, and who are they popular with?  Were you able to show this information clearly/visually? If you could not use sentiment analysis, why not? 
+4. Were you able to combine sentiment knowledge with a topic analysis?  That is, were you able to show what supporters who were positive/negative towards each candidate talked about? Could you show this clearly/visually? If you could not use topic analysis, why not? 
+5. Could you relate your results to the actual state-voting patterns in the election? What are you able to show, and how confident are you in your findings?
+ 
+
+Please take these as loose suggestions, not a check list. If you find you can write interesting material about only a couple of these points, or something else entirely that takes your interest in the data, then great, please write about that instead. We ask that you at least try to use both sentiment and topic analyses, but if you can't use one and can explain why it is not useful for your analysis then this is also okay.
+ 
+
+Report
+ 
+
+We would like the report to be ~5 pages long. The absolute maximum is 8 pages - though shorter is usually better. Code can be included as an appendix if you particularly want to, but it is not expected. The report styles are loosely based on the style of computer science scientific journal papers. The basic guideline for the lay out of your report is as follows:
+ 
+
+Title
+Author List (Mandatory)
+Abstract 
+Introduction
+Methodology 
+Results and Discussion 
+Conclusion
+ 
+
+You can vary from this a little if you wish, but this is what we have in mind. Specific layout (font size / spacing / columns) details are attached. The main reason for the layout guidelines is to stop too much playing with margins, spacing (etc) to try to make a long report 'appear' shorter, or vice-versa.
+ 
+
+The author list is mandatory so as that  if one (or more) team members did not actually take part at all in the assignment it will be clear to the graders. I know that a few people are in Canvas but are simply not there as they have left the course. It will be assumed that all team members contributed equally unless the author list makes this clear otherwise. If you end up in a smaller than usual team the grading will take that into account, but only if you have a correct author list.
+ 
+
+Software / Videos
+ 
+
+In terms of software, you are not restricted to using Python/Pandas/matplotlib that I showed in the lectures. But to be clear, if you do use separate software, the TAs and I can not help you with implementation problems. I know some of you also would also like to make animations/videos of how tweet data evolved over time. Yes if you make these they can be included as a link in the report. They will be seen, but I would ask that you prioritise the appropriate text and image representations actually in the report.
+ 
+
+Notes on computational difficulties
+
+ 
+
+1) Much of the memory usage is in loading the jsons file and converting it to the list of dictionaries (tweets_data), which you then won't use. After loading the json file, try only putting the columns you think you might need into a Pandas dataframe. Save that dataframe then close the notebook. Start working with that dataframe (or a smaller one, below) in a new notebook - it should use less memory than running the whole process.
+ 
+
+2) For each analysis you want to do, after making the dataframe in 1), select only the columns you need in the dataframe from 1) and save them as a new dataframe, close that notebook and start working with the new dataframe in a new notebook. While this means making a separate file for each sub-analysis, this step is the one where you should see the biggest improvement. Likely for each kind of analysis you run you want maybe only a couple of columns loaded into memory which will be an ~O(10) reduction in memory usage. 
+ 
+
+3) Instead of loading the full dataset, only work with a subset, for example a random subset or a subset from a smaller time period. Just write one or two lines in the report about how this might affect the statistics of your conclusions, then move on. 
+ 
+
+4) You can load the dataset into MongoDB instead, which is designed for large database management. If you go this route it really should work faster, but it will cause a bit of code overhead.
+ 
+
+Further notes on the collected data
+ 
+
+The file can be found in the files section, in "Assignments/Assignment 1"
+Tweets were collected via Twitter's Streaming API in the period 12.08-12.09, 2016. The monitored hashtags and accounts were:
+ 
+
+'@HillaryClinton', '#maga', '#trumppence16', '#hillaryclinton', '#hillary', '#crookedhillary', '#donaldtrump', '#dumptrump', '@realDonaldTrump', '#nevertrump', '#imwithher', '#neverhillary', '#trump'
+ 
+
+Total number of tweets in the original dataset was: 26,687,737 . After selecting only those tweets with a geolocation, the number was reduced to: 657.307
