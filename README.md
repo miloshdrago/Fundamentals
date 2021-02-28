@@ -1,8 +1,4 @@
 # Fundamentals of Data Science
-**Group** | **Trello** | **Members**
---------- | ---------- | -----------
-4 | [Go to board](https://trello.com/b/v7z9ibX9/uva-ds-ii) | Milos, Joris, Andrew, Tycho, Antonio
-
 **Objective**
 > Your assignment is to assess the nature of the relationship between user Instagram activity and the content of the images and their well-being. At your disposal you have data on the user, images and their metadata and features extracted from the images (e.g. sentiment, faces).
 
